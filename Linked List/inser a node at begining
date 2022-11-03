@@ -1,0 +1,29 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class Linkedlist:
+    def __init__(self):
+        self.head=None
+    def printlist(self):
+        temp=self.head #here self means llist as llist called this function by llist.printlist in last line
+        while(temp):
+            print(temp.data)
+            temp=temp.next
+    def add_node(self, new_data):
+        new_node=Node(new_data)
+        new_node.next=self.head
+        self.head=new_node
+        
+    
+if __name__=='__main__':
+
+    llist=Linkedlist()
+    llist.head=Node(1)
+    second=Node(2)
+    third=Node(3)
+    
+    llist.head.next=second
+    second.next=third
+    llist.add_node(4)
+    llist.printlist()
