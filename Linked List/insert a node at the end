@@ -1,0 +1,35 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class Linkedlist:
+    def __init__(self):
+        self.head=None
+    def printlist(self):
+        temp=self.head
+        while(temp):
+            print(temp.data)
+            temp=temp.next
+    
+    def append_last(self,new_data):
+        new_node=Node(new_data)
+        
+        if self.head is None:
+            self.head=new_node
+            return
+        last=self.head# llist's head assigned is last
+        while(last.next):
+            last=last.next #traversing till last
+        last.next=new_node
+    
+if __name__=='__main__':
+
+    llist=Linkedlist()
+    llist.head=Node(1)
+    second=Node(2)
+    third=Node(3)
+    
+    llist.head.next=second
+    second.next=third
+    llist.append_last(6)
+    llist.printlist()
