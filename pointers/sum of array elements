@@ -12,3 +12,19 @@ int main(){
     int n=sizeof(a)/sizeof(a[0]);
     int sum=add(a,n);
     printf("sum=%d",sum);
+
+
+#include <stdio.h>
+int add(int b[],int len){
+    int sumw=0;
+    for(int i=0;i<len;i++){
+        sumw+=b[i];
+    }
+    return sumw;
+}
+
+int main(){
+    int a[]={1,2,3,4};
+    int n=sizeof(a)/sizeof(a[0]);
+    int sum=add(a,n);
+    printf("sum=%d",sum);
