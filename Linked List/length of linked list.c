@@ -18,7 +18,7 @@ void addend(int data){
         return;
     }
     temp=head;
-    while(temp->next!=NULL){
+    while(temp->next!=NULL){ //add at the end of a given linked list
         temp=temp->next;
         
     }
