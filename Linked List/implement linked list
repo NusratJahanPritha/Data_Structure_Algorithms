@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node{
+    int data;
+    struct node *next;
+};
+
+struct node *head,*newnode,*temp;
+
+void addend(int data){
+    newnode=(struct node*)malloc(sizeof(struct node));
+    newnode->data=data;
+    newnode->next=NULL;
+    
+    if(head==NULL){
+        head=temp=newnode;
+        return;
+    }
+    temp->next=newnode;
+    temp=newnode;
+    
+}
+void print(){
+    temp=head;
+    printf("nodes:\n");
+    while(temp!=NULL){
+        printf("%d\n",temp->data);
+        temp=temp->next;
+    }
+}
+
+void length(){
+    temp=head;
+    int count=0;
+    while(temp!=NULL){
+        count++;
+        temp=temp->next;
+    }
+    printf("length is %d",count);
+}
+
+
+int main()
+{
+    addend(3);
+    addend(4);
+    addend(1);
+    addend(2);
+    print();
+    length();
+    return 0;
+}
